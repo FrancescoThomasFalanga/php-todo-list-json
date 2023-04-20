@@ -66,6 +66,19 @@ createApp({
 
             this.todos.splice(position, 1);
 
+        },
+
+        deleteTask(position) {
+            let data = {
+                deleteTask: position,
+            };
+      
+            axios.post('./server.php', data, { headers: { 'Content-Type': 'multipart/form-data' } }).then(response => {
+
+              this.getInfo();
+
+            });
+      
         }
 
     },

@@ -40,7 +40,7 @@
 
                         <h4 @click="doneProperty(todo)" :class="todo.status == 'false' ? 'lined' : '' "> {{ todo.name }} </h4>
 
-                        <button @click="removeTodo(index)"><i class="fa-solid fa-trash"></i></button>
+                        <button @click="deleteTask(index)"><i class="fa-solid fa-trash"></i></button>
 
                     </li>
 
