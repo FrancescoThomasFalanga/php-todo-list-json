@@ -50,8 +50,8 @@
 
             <div class="new-todo">
 
-                <input type="text" placeholder="Inserisci elemento...">
-                <button class="add">Inserisci</button>
+                <input @keyup.enter="addTodo()" v-model="newTodo" type="text" placeholder="Inserisci elemento...">
+                <button @click="addTodo()" class="add">Inserisci</button>
 
             </div>
 
