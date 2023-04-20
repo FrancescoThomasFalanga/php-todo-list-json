@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP ToDo List JSON</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js" integrity="sha512-06NZg89vaTNvnFgFTqi/dJKFadQ6FIglD6Yg1HHWAUtVFFoXli9BZL4q4EO1UTKpOfCfW5ws2Z6gw49Swsilsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    
+    <div id="app">
+
+        <div class="centered-container">
+
+            <h1 id="title">Todo List</h1>
+
+            <div class="todo-list">
+
+                <ul>
+
+                    <li v-for="todo in todos">
+
+                        <h4> {{ todo }} </h4>
+
+                        <button><i class="fa-solid fa-trash"></i></button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="new-todo">
+
+                <input type="text" placeholder="Inserisci elemento...">
+                <button class="add">Inserisci</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- main -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
