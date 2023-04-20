@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
 
-            todos: ["Server","HTML","CSS","Responsive","Bootstrap","JS","Vue","php","Database"],
+            todos: [],
 
             newTodo: "",
 
@@ -25,9 +25,19 @@ createApp({
         },
 
         addTodo() {
+
+            let data = {
+                newTodo: "",
+            }
+    
+            data.newTodo = this.newTodo;
+                
+            axios.post("./server.php", data, {headers: {"Content-Type": "multipart/form-data"}}).then(response => {
                 
                 this.todos.push(this.newTodo);
                 this.newTodo = "";
+    
+            });
     
         },
 
