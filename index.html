@@ -36,11 +36,11 @@
 
                 <ul>
 
-                    <li v-for="todo in todos">
+                    <li v-for="(todo, index) in todos">
 
                         <h4 @click="doneProperty(todo)" :class="todo.status == 'false' ? 'lined' : '' "> {{ todo.name }} </h4>
 
-                        <button><i class="fa-solid fa-trash"></i></button>
+                        <button @click="removeTodo(index)"><i class="fa-solid fa-trash"></i></button>
 
                     </li>
 

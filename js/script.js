@@ -62,6 +62,12 @@ createApp({
 
         },
 
+        removeTodo(position) {
+
+            this.todos.splice(position, 1);
+
+        }
+
     },
 
     mounted() {
