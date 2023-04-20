@@ -26,18 +26,29 @@ createApp({
 
         addTodo() {
 
-            let data = {
-                newTodo: "",
-            }
-    
-            data.newTodo = this.newTodo;
-                
-            axios.post("./server.php", data, {headers: {"Content-Type": "multipart/form-data"}}).then(response => {
-                
-                this.todos.push(this.newTodo);
-                this.newTodo = "";
-    
-            });
+            if (this.newTodo != "") {
+
+                let data = {
+                    newTodo: "",
+                    status: true,
+                }
+        
+                data.newTodo = this.newTodo;
+                    
+                axios.post("./server.php", data, {headers: {"Content-Type": "multipart/form-data"}}).then(response => {
+
+                    const singleTodo = {
+                        name: this.newTodo,
+                        status: true
+                    };
+                    
+                    this.todos.push(singleTodo);
+                    this.newTodo = "";
+        
+                });
+
+            };
+
     
         },
 

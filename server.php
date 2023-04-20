@@ -7,7 +7,10 @@ if(isset($_POST["newTodo"])) {
 
     $todos = json_decode($todosJSON);
 
-    $todos[] = $_POST["newTodo"];
+    $todos[] = [
+        "name" => $_POST["newTodo"],
+        "status" => "true"
+    ];
 
     $newTodoJSON = json_encode($todos);
 
