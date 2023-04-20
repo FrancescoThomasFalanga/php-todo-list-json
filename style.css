@@ -80,3 +80,7 @@ input {
     border-color: #e5bd15;
     background-color: #001632;
 }
+
+.lined {
+    text-decoration: line-through;
+}

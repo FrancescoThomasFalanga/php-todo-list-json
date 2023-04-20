@@ -30,7 +30,7 @@ createApp({
 
                 let data = {
                     newTodo: "",
-                    status: true,
+                    status: true
                 }
         
                 data.newTodo = this.newTodo;
@@ -50,6 +50,16 @@ createApp({
             };
 
     
+        },
+
+        doneProperty(checkUncheck) {
+
+            if (checkUncheck.status == "true") {
+                checkUncheck.status = "false";
+            } else {
+                checkUncheck.status = "true";
+            };
+
         },
 
     },
