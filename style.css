@@ -79,6 +79,7 @@ input {
     color: #e5bd15;
     border-color: #e5bd15;
     background-color: #001632;
+    cursor: pointer;
 }
 
 .lined {
