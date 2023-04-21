@@ -30,7 +30,7 @@ createApp({
 
                 let data = {
                     newTodo: "",
-                    status: true
+                    status: false
                 }
         
                 data.newTodo = this.newTodo;
@@ -39,7 +39,7 @@ createApp({
 
                     const singleTodo = {
                         name: this.newTodo,
-                        status: true
+                        status: false
                     };
                     
                     this.todos.push(singleTodo);
@@ -52,19 +52,17 @@ createApp({
     
         },
 
-        doneProperty(checkUncheck) {
+        doneProperty(position) {
 
-            if (checkUncheck.status == "true") {
-                checkUncheck.status = "false";
-            } else {
-                checkUncheck.status = "true";
+            let data = {
+                toggleTodo: position,
             };
+      
+            axios.post('./server.php', data, { headers: { 'Content-Type': 'multipart/form-data' } }).then(response => {
 
-        },
+              this.getInfo();
 
-        removeTodo(position) {
-
-            this.todos.splice(position, 1);
+            });
 
         },
 

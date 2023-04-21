@@ -9,7 +9,7 @@ if(isset($_POST["newTodo"])) {
 
     $todos[] = [
         "name" => $_POST["newTodo"],
-        "status" => "true"
+        "status" => "false"
     ];
 
     $newTodoJSON = json_encode($todos);
@@ -28,8 +28,28 @@ if(isset($_POST["newTodo"])) {
   
     file_put_contents('todos.json', $newTodo);
     
-} else {
+} elseif(isset($_POST['toggleTodo'])) {
 
+    $todosJSON = file_get_contents('todos.json');
+  
+    $todos = json_decode($todosJSON);
+  
+    if ($todos[$_POST['toggleTodo']] -> status == "true") {
+
+        $todos[$_POST['toggleTodo']] -> status = "false";
+
+    } elseif ($todos[$_POST['toggleTodo']] -> status == "false") {
+
+        $todos[$_POST['toggleTodo']] -> status = "true";
+
+    };
+  
+    $newTodo = json_encode($todos);
+  
+    file_put_contents('todos.json', $newTodo);
+
+} else {
+    
     $getString = file_get_contents("todos.json");
     
     $todos = json_decode($getString);
