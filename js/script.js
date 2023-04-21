@@ -37,12 +37,8 @@ createApp({
                     
                 axios.post("./server.php", data, {headers: {"Content-Type": "multipart/form-data"}}).then(response => {
 
-                    const singleTodo = {
-                        name: this.newTodo,
-                        status: false
-                    };
+                    this.getInfo();
                     
-                    this.todos.push(singleTodo);
                     this.newTodo = "";
         
                 });
